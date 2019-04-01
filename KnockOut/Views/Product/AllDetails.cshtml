@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "AllDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br /><br />
+<h1 style="text-align: center;color:#ff6a00"><b>Product Details:</b></h1>
+<br /><br />
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script src="~/Scripts/knockout-3.5.0.js"></script>
+<script src="~/Scripts/ViewModel/Api.js"></script>
+<script src="~/Scripts/ViewModel/Constant.js"></script>
+<script src="~/Scripts/ViewModel/ShowDtailsViewModel.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        //    cbo.configure();
+        ko.applyBindings(new cbo.ShowDtailsViewModel(
+            cbo.Constant.BASE_URIAPI,
+            cbo.Constant.PortalApiRels
+        ));
+
+    });
+</script>
+<div style="flex-align:center">
+    <table id="taskTypeDetails-Tbl" class="table table--sortable" border="1">
+        <thead>
+            <tr class="btn-default breadcrumb">
+                <th style="text-align: center; ">Id</th>
+                <th style="text-align: center; ">Name</th>
+                <th style="text-align: center; ">Price</th>
+                <th style="text-align: center; ">Quantity</th>
+                <th style="text-align: center; ">Type</th>
+                <th style="text-align: center; ">Code</th>
+                <th style="text-align: center; ">Password</th>
+                <th style="text-align: center; ">Discription</th>
+                <th style="text-align: center; ">Action</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach:userCollection">
+            <tr style="min-height: 50px">
+                <td style="text-align: center; "><span data-bind="text:ProductId "></span></td>
+                <td style="text-align: center; "><span data-bind="text:ProductName"></span> </td>
+                <td style="text-align: center; "><span data-bind="text:ProductPrice "></span></td>
+                <td style="text-align: center; "><span data-bind="text:ProductQuantity"></span> </td>
+                <td style="text-align: center; "><span data-bind="text:ProductType "></span></td>
+                <td style="text-align: center; "><span data-bind="text:ProductCode"></span> </td>
+                <td style="text-align: center; "><span data-bind="text:ProductPassword "></span></td>
+                <td style="text-align: center; "><span data-bind="text:ProductDiscription"></span> </td>
+                <td style="text-align: center ; ">
+                    <button class="btn-link icon-edit" data-toggle="tooltip" @*data-bind=" click: $root. sendCommand.bind($root, 'EDIT TASKTYPE', $data)"*@>Show Details</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

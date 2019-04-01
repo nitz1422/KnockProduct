@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "AllDetails";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+    <h2>@ViewBag.Message</h2>
+</hgroup>
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script src="~/Scripts/knockout-3.5.0.js"></script>
+<script src="~/Scripts/ViewModel/Api.js"></script>
+<script src="~/Scripts/ViewModel/Constant.js"></script>
+<script src="~/Scripts/ViewModel/ShowDtailsViewModel.js"></script>
+
+<script type="text/javascript" >
+
+    $(document).ready(function () {
+
+       //    cbo.configure();
+        ko.applyBindings(new cbo.ShowDtailsViewModel(
+            cbo.Constant.BASE_URIAPI,
+            cbo.Constant.PortalApiRels
+            ));
+
+    });
+</script>
+<div style="flex-align:center">
+    <table id="taskTypeDetails-Tbl" class="table table--sortable" border="1">
+        <thead>
+            <tr class="btn-default breadcrumb">
+                <th style="text-align: center; ">First Name</th>
+                <th style="text-align: center; ">Last Name</th>
+                @*<th style="text-align:center; ">Edit</th>*@
+            </tr>
+        </thead>
+        <tbody data-bind="foreach:userCollection">
+            <tr style="min-height: 50px">
+                <td style="text-align: center; "><span data-bind="text:ModelNo "></span></td>
+                <td style="text-align: center; "><span data-bind="text:BrandName"></span> </td>
+                @*<td style="text-align: center ; ">
+                    <button class="btn-link icon-edit" data-toggle="tooltip" data-bind=" click: $root. sendCommand.bind($root, 'EDIT TASKTYPE', $data)">Edit</button>
+                </td>*@
+            </tr>
+        </tbody>
+    </table>
+
+</div>

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnockOut", "KnockOut\KnockOut.csproj", "{B56E66E1-634B-46F9-B85C-E5B91EE33D25}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductUI", "KnockOut\ProductUI.csproj", "{B56E66E1-634B-46F9-B85C-E5B91EE33D25}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
