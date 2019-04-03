@@ -5,4 +5,75 @@
 }
 
 <h2>Register</h2>
+<input type="button" id="register" data-bind=" click: $root. sendCommand.bind($root, 'ProductDetails', $data)" />
+
+<div id="ShowProduct" class="modal fade" role="dialog" data-keyboard="false" data-backdrop="false">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span>Product Details: - </span>
+                <button type="button" class="close" style="float:right;color:red;" data-dismiss="modal">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="panel-body" style="padding-bottom: 0px; padding-top: 5px">
+                    <div>
+                        <div class="pane1-body">
+                            <div class="col-md-12">
+                                <div class="form-field">
+                                    <table style="padding:inherit;width:100% ">
+                                        <tr style="text-align:center">
+                                            <td>
+                                                Id:
+                                                <input type="text" name="id" id="txtId">
+                                            </td>
+                                            <td>
+                                                Name:
+                                                <input type="text" name="name" id="lblName"><br /><br />
+                                            </td>
+                                        </tr>
+
+                                        <tr style="text-align:center">
+                                            <td>
+                                                Password:
+                                                <input type="text" name="password" id="txtPassword">
+                                            </td>
+                                            <td>
+                                                Code:
+                                                <input type="text" name="code" id="txtCode"><br /><br />
+                                            </td>
+                                        </tr>
+                                        <tr style="text-align:center">
+                                            <td>
+                                                Price:
+                                                <input type="text" name="Price" id="txtPrice">
+                                            </td>
+                                            <td>
+                                                Quantity:
+                                                <input type="text" name="Quantity" id="txtQuantity"><br /><br />
+                                            </td>
+                                        </tr>
+                                        <tr style="text-align:center">
+                                            <td>
+                                                Type:
+                                                <input type="text" name="Type" id="txtType">
+                                            </td>
+                                            <td>
+                                                Discription:
+                                                <input type="text" name="Discription" id="txtDiscription">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-info pull-left" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 

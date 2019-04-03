@@ -9,6 +9,7 @@ cbo.ShowDtailsViewModel = function (baseApiUrl, PortalApiRels) {
         throw new Error("portel url is empty");
     }
     var userCollection = ko.observableArray();
+    var Product_ShowDetails = ko.observable(new cbo.ProductDetailsViewModel());
     var callBackSuccess_GetUser = function (data) {
 
         if (data.length > 0) {
@@ -41,6 +42,29 @@ cbo.ShowDtailsViewModel = function (baseApiUrl, PortalApiRels) {
 
 
     }
+
+    var HandleDetails = function (data) {
+
+        Product_ShowDetails().ProductId_ProductDetails(data.ProductId());
+        Product_ShowDetails().ProductName_ProductDetails(data.ProductName());
+        Product_ShowDetails().ProductCode_ProductDetails(data.ProductCode()); 
+        Product_ShowDetails().ProductPassword_ProductDetails(data.ProductPassword());
+        Product_ShowDetails().ProductPrice_ProductDetails(data.ProductPrice());
+        Product_ShowDetails().ProductQuantity_ProductDetails(data.ProductQuantity());
+        Product_ShowDetails().ProductType_ProductDetails(data.ProductType());
+        Product_ShowDetails().ProductDiscription_ProductDetails(data.ProductDiscription());        
+    }
+
+    var commandResponse = function (command, data) {
+
+        switch (command) {
+            case 'ProductDetails':
+                HandleDetails(data);
+                $('#ShowProduct').modal('show');
+             
+                break;
+        }
+    };
     var loadDefaults = function () {
         $.ajaxSetup({
             cache: false
@@ -52,10 +76,26 @@ cbo.ShowDtailsViewModel = function (baseApiUrl, PortalApiRels) {
     loadDefaults(); //PAge load method
 
     return {
-        //sendCommand: commandResponse,
-        userCollection: userCollection
-        //user_AddEdit: user_AddEdit
+        sendCommand: commandResponse,
+        userCollection: userCollection,
+        Product_ShowDetails: Product_ShowDetails
     };
+}
+
+cbo.ProductDetailsViewModel = function () {
+
+    var self = this;
+    self.ProductId_ProductDetails = ko.observable();
+    self.ProductName_ProductDetails = ko.observable();
+    self.ProductPrice_ProductDetails = ko.observable();
+    self.ProductQuantity_ProductDetails = ko.observable();
+    self.ProductType_ProductDetails = ko.observable();
+    self.ProductCode_ProductDetails = ko.observable();
+    self.ProductPassword_ProductDetails = ko.observable();
+    self.ProductDiscription_ProductDetails = ko.observable();
+
+    //  self.Lastname_AddEdit = ko.observable().extend({ required: true });
+
 }
 
 cbo.UserModel = function () {
@@ -70,3 +110,5 @@ cbo.UserModel = function () {
     self.ProductPassword = ko.observable();
     self.ProductDiscription = ko.observable();
 }
+
+
