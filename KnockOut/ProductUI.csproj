@@ -128,6 +128,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ProductHomeController.cs" />
     <Compile Include="Controllers\ProductLoginController.cs" />
     <Compile Include="Controllers\ProductRegisterController.cs" />
     <Compile Include="Global.asax.cs">
@@ -161,6 +162,7 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\ViewModel\Api.js" />
     <Content Include="Scripts\ViewModel\Constant.js" />
+    <Content Include="Scripts\ViewModel\ProductHoemViewModel.js" />
     <Content Include="Scripts\ViewModel\ShowDtailsViewModel.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -180,6 +182,7 @@
     <Content Include="Views\Product\AllDetails.cshtml" />
     <Content Include="Views\ProductLogin\Login.cshtml" />
     <Content Include="Views\ProductRegister\Register.cshtml" />
+    <Content Include="Views\ProductHome\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

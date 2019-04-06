@@ -2,6 +2,7 @@
 
 cbo.Constant = function () {
 
+
     var PortalApiRels = {
 
         //API's
@@ -12,14 +13,17 @@ cbo.Constant = function () {
         POST: "Post",
         PUT: "Put",
         GETBYID: "GEtById",
-        DELETE: "Remove"
+        DELETE: "Remove",
+        GETPRODUCT: "PutProduct",
+        GETCOUNTRY: "GetCountry"
+
       //  url: "http://localhost:49251/"
 
     };
 
     return {
 
-        BASE_URIAPI: 'http://localhost:49251/',
+        BASE_URIAPI: 'http://localhost:49251',
 
         PortalApiRels: PortalApiRels
     };

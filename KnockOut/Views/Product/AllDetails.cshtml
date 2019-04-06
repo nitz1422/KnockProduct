@@ -19,6 +19,9 @@
 
     });
 </script>
+<table>
+    <tr><td><input type="button" id="register" data-bind=" click: $root. sendCommand.bind($root, 'RegisterProduct', $data)" value="Registration"></td><td><input type="button" id="register" data-bind=" click: $root. sendCommand.bind($root, 'LoginProduct', $data)" value="Login"></td></tr>
+</table><br /><br />
 <div style="flex-align:center">
     <table id="taskTypeDetails-Tbl" class="table table--sortable" border="1">
         <thead>
@@ -51,6 +54,9 @@
         </tbody>
     </table>
 </div>
+
+
+
 <div id="ShowProduct" class="modal fade" role="dialog" data-keyboard="false" data-backdrop="false">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -64,9 +70,9 @@
                         <div class="pane1-body">
                             <div class="col-md-12">
                                 <div class="form-field">
-                                    <table style="padding:inherit;width:100% " >
-                                        <tr style="text-align:center" >
-                                            <td >
+                                    <table style="padding:inherit;width:100% ">
+                                        <tr style="text-align:center">
+                                            <td>
                                                 Id:
                                                 <label for="lblId" name="id" data-bind="text:Product_ShowDetails().ProductId_ProductDetails " id="lblId"></label>
                                             </td>
@@ -74,9 +80,9 @@
                                                 Name:
                                                 <label for="lblname" name="name" data-bind="text:Product_ShowDetails().ProductName_ProductDetails " id="lblName"></label><br /><br />
                                             </td>
-                                            </tr>
-                                       
-                                        <tr  style="text-align:center">
+                                        </tr>
+
+                                        <tr style="text-align:center">
                                             <td>
                                                 Password:
                                                 <label for="lblPassword" name="password" data-bind="text:Product_ShowDetails().ProductPassword_ProductDetails " id="lblPassword"></label>
@@ -86,7 +92,7 @@
                                                 <label for="lblCode" name="code" data-bind="text:Product_ShowDetails().ProductCode_ProductDetails " id="lblCode"></label><br /><br />
                                             </td>
                                         </tr>
-                                        <tr  style="text-align:center">
+                                        <tr style="text-align:center">
                                             <td>
                                                 Price:
                                                 <label for="lblPrice" name="Price" data-bind="text:Product_ShowDetails().ProductPrice_ProductDetails " id="lblPrice"></label>
@@ -95,8 +101,8 @@
                                                 Quantity:
                                                 <label for="lblQuantity" name="Quantity" data-bind="text:Product_ShowDetails().ProductQuantity_ProductDetails " id="lblQuantity"></label><br /><br />
                                             </td>
-                                            </tr>
-                                        <tr  style="text-align:center">
+                                        </tr>
+                                        <tr style="text-align:center">
                                             <td>
                                                 Type:
                                                 <label for="lblype" name="Type" data-bind="text:Product_ShowDetails().ProductType_ProductDetails " id="lblType"></label>
@@ -119,3 +125,133 @@
         </div>
     </div>
 </div>
+
+
+
+
+
+
+
+
+
+<div id="ProductRegistrationView" class="modal fade" role="dialog" data-keyboard="false" data-backdrop="false">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span>Product Details: - </span>
+                <button type="button" class="close" style="float:right;color:red;" data-dismiss="modal">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="panel-body" style="padding-bottom: 0px; padding-top: 5px">
+                    <div>
+                        <div class="pane1-body">
+                            <div class="col-md-12">
+                                <div class="form-field">
+                                    <table style="padding:inherit;width:100% ">
+                                        <tr >
+                                            
+                                            <td   style="padding-right:10px" >
+                                              Id:
+                                                <input type="text" name="id" id="txtId">
+                                            </td>
+                                         
+                                            <td>
+                                                Name:
+
+                                                <input type="text" name="name" id="lblName" data-bind="value:Product_ShowDetails().ProductName_ProductDetails "><br /><br />
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                Password:
+                                                <input type="text" name="password" id="txtPassword" data-bind="value:Product_ShowDetails().ProductPassword_ProductDetails">
+                                            </td>
+                                            <td>
+                                                Code:
+                                                <input type="text" name="code" id="txtCode" data-bind="value:Product_ShowDetails().ProductCode_ProductDetails"><br /><br />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Price:
+                                                <input type="text" name="Price" id="txtPrice" data-bind="value:Product_ShowDetails().ProductPrice_ProductDetails">
+                                            </td>
+                                            <td>
+                                                Quantity:
+                                                <input type="text" name="Quantity" id="txtQuantity" data-bind="value:Product_ShowDetails().ProductQuantity_ProductDetails"><br /><br />
+                                            </td>
+                                        </tr>
+                                        <tr >
+                                            <td>
+                                                Type:
+                                                <input type="text" name="Type" id="txtType" data-bind="value:Product_ShowDetails().ProductType_ProductDetails">
+                                            </td>
+                                            <td>
+                                                Discription:
+                                                <input type="text" name="Discription" id="txtDiscription" data-bind="value:Product_ShowDetails().ProductDiscription_ProductDetails">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-info pull-right" data-bind="click:$root.sendCommand.bind($root ,'SAVE_USER',$data)">Save changes</button>
+                <button class="btn btn-info pull-left" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="ProductLoginView" class="modal fade" role="dialog" data-keyboard="false" data-backdrop="false">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span>Login here: - </span>
+                <button type="button" class="close" style="float:right;color:red;" data-dismiss="modal">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="panel-body" style="padding-bottom: 0px; padding-top: 5px">
+                    <div>
+                        <div class="pane1-body">
+                            <div class="col-md-12">
+                                <div class="form-field">
+                                    <table style="padding:inherit;width:100% ">
+                                        <tr>
+
+                                            <td>
+                                                Code:
+                                                
+                                                <input type="text" name="code" id="txtCode" data-bind="value:Product_ShowDetails().ProductCode_ProductDetails"><br /><br />
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Password:
+                                                <input type="text" name="password" id="txtPassword" data-bind="value:Product_ShowDetails().ProductPassword_ProductDetails">
+                                            </td>
+                                        </tr>
+
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-info pull-right" data-bind="click:$root.sendCommand.bind($root ,'SaveProduct',$data)">Login</button>
+                <button class="btn btn-info pull-left" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
